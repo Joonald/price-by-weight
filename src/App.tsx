@@ -26,11 +26,6 @@ function App() {
     setCost(cost);
   }
 
-  function handleUnitChange(event: React.ChangeEvent<HTMLSelectElement>) {
-    setUnit(event.target.value);
-  }
-
-  console.log(unit);
   return (
     <>
       <h1 className='mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white'>
@@ -47,7 +42,7 @@ function App() {
             </h3>
             <input
               placeholder='0'
-              type='text'
+              type='number'
               onChange={(event) => handleChange(setPrice, event)}
               className='w-full text-xl md:text-2xl lg:text-3xl bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
             />
@@ -58,15 +53,15 @@ function App() {
           <div className='flex w-[48%]'>
             <input
               placeholder='0'
-              type='text'
+              type='number'
               onChange={(event) => handleChange(setWeight, event)}
               className='w-7/12 text-xl md:text-2xl lg:text-3xl bg-gray-50 border border-gray-300 text-gray-900 rounded-l-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
             />
             <select
-              onChange={handleUnitChange}
+              onChange={(event) => setUnit(event.target.value)}
               name='unit'
               id='unit'
-              className='w-5/12 text-sm md:base font-bold  border rounded-e-lg border-s-gray-100 dark:border-s-gray-700 border-s-2 block p-2 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500'>
+              className='w-5/12 text-sm md:base font-bold  border rounded-r-lg border-s-gray-100 dark:border-s-gray-700 border-s-2 block p-2 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500'>
               <option value='kg'>kg</option>
               <option value='g'>g</option>
             </select>
